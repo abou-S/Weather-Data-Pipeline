@@ -47,6 +47,9 @@ docker-compose up --build
 Voici un aperçu du dashboard Streamlit affichant les données météo :
 
 ![Dashboard](https://imgur.com/a/WUrY9Sy)
+<p align="center">
+  <img src="https://imgur.com/a/WUrY9Sy" width="600">
+</p>
 
 ---
 
