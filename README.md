@@ -36,6 +36,13 @@ docker-compose up --build
 - 🔗 Dashboard Streamlit : http://localhost:8501
 
 ---
+## 🖼️ Aperçu du Dashboard
+
+Voici un aperçu du dashboard Streamlit affichant les données météo :
+
+![Dashboard](https://imgur.com/a/WUrY9Sy)
+
+---
 
 ## 📊 Résultat
 
