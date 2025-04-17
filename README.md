@@ -29,8 +29,6 @@ weather-data-pipeline/
 ├── requirements.txt
 └── README.md
 ```
-weather-data-pipeline/ ├── dags/ # DAG Airflow ├── dashboard/ # App Streamlit ├── docker-compose.yml ├── Dockerfile ├── requirements.txt └── README.md
-
 
 ## 🐳 Lancer le projet avec Docker
 
