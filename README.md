@@ -28,22 +28,25 @@ weather-data-pipeline/ ├── dags/ # DAG Airflow ├── dashboard/ # App 
 
 ```bash
 # Construire et démarrer tous les services
-docker-compose up --build
+docker-compose up --build 
+```
+## 🚀 Accéder à l'application
 
-Accéder à :
+- 🔗 [Airflow](http://localhost:8080)  
+- 🔗 [Dashboard Streamlit](http://localhost:8501)
 
-Airflow : http://localhost:8080
-
-Dashboard Streamlit : http://localhost:8502
+---
 
 ## 📊 Résultat
-- Données météo mises à jour automatiquement via Airflow
 
-- Stockées dans PostgreSQL
+- ✅ Données météo mises à jour automatiquement via **Airflow**
+- ✅ Stockées dans **PostgreSQL**
+- ✅ Affichées dans un **dashboard interactif** avec Streamlit
 
-- Affichées dans un dashboard interactif
+---
 
 ## 🙋‍♂️ Auteur
-# Aboubacrine Seck
-#👨‍💻 Étudiant en Master Data & IA @ HETIC
-#📧 aboubacrineseckpro@gmail.com
+
+**Aboubacrine Seck**  
+👨‍💻 Étudiant en Master Data & IA @ HETIC  
+📧 [aboubacrineseckpro@gmail.com](mailto:aboubacrineseckpro@gmail.com)
