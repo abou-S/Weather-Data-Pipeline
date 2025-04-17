@@ -20,6 +20,7 @@ Mettre en place un pipeline **ETL** de bout en bout :
 - SQLAlchemy / Pandas
 
 ## 📁 Architecture du projet
+```bash
 weather-data-pipeline/
 ├── dags/              # DAG Airflow
 ├── dashboard/         # App Streamlit
@@ -27,7 +28,7 @@ weather-data-pipeline/
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
-
+```
 weather-data-pipeline/ ├── dags/ # DAG Airflow ├── dashboard/ # App Streamlit ├── docker-compose.yml ├── Dockerfile ├── requirements.txt └── README.md
 
 
