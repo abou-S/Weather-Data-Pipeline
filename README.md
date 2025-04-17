@@ -32,8 +32,8 @@ docker-compose up --build
 ```
 ## 🚀 Accéder à l'application
 
-- 🔗 [Airflow](http://localhost:8080)  
-- 🔗 [Dashboard Streamlit](http://localhost:8501)
+- 🔗 Airflow : http://localhost:8080
+- 🔗 Dashboard Streamlit : http://localhost:8501
 
 ---
 
