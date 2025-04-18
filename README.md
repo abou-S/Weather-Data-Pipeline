@@ -29,6 +29,11 @@ weather-data-pipeline/
 ├── requirements.txt
 └── README.md
 ```
+## Le workflow
+
+<p align="center">
+  <img src="images/workflow.png" width="600">
+</p>
 
 ## 🐳 Lancer le projet avec Docker
 
@@ -45,10 +50,8 @@ docker-compose up --build
 ## 🖼️ Aperçu du Dashboard
 
 Voici un aperçu du dashboard Streamlit affichant les données météo :
-
-![Dashboard](https://imgur.com/a/WUrY9Sy)
 <p align="center">
-  <img src="https://imgur.com/a/WUrY9Sy" width="600">
+  <img src="images/dashboardImage.png" width="600">
 </p>
 
 ---
