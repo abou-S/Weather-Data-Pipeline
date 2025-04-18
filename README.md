@@ -22,12 +22,17 @@ Mettre en place un pipeline **ETL** de bout en bout :
 ## 📁 Architecture du projet
 ```bash
 weather-data-pipeline/
-├── dags/              # DAG Airflow
-├── dashboard/         # App Streamlit
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-└── README.md
+├── airflow/           # Configuration Airflow
+│   ├── Dockerfile     # Image Docker pour Airflow
+│   └── requirements.txt  # Dépendances Airflow
+├── dashboard/         # Application Streamlit
+│   ├── Dockerfile     # Image Docker pour Streamlit
+│   ├── dashboard.py   # Code du dashboard
+│   └── requirements.txt  # Dépendances Streamlit
+├── dags/              # DAGs Airflow
+│   └── weather_dag.py # DAG de collecte de données météo
+├── docker-compose.yml # Configuration des services
+└── README.md          # Documentation
 ```
 ## Le workflow
 
