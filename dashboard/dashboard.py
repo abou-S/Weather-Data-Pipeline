@@ -44,29 +44,31 @@ with engine.connect() as connection:
             selected_city = st.selectbox("🏙️ Sélectionner une ville", df["city"].unique())
             df = df[df["city"] == selected_city]
 
-            # Obtenir l'heure actuelle
-            current_time = datetime.datetime.now()
+            # Vérifier que le DataFrame n'est pas vide avant de continuer
+            if not df.empty:
+                # Obtenir l'heure actuelle
+                current_time = datetime.datetime.now()
 
-            # Calculer la différence absolue entre chaque heure du DataFrame et l'heure actuelle
-            df['time_diff'] = abs(df['time'] - current_time)
-
-            # Trouver l'index de l'entrée la plus proche de l'heure actuelle
-            closest_time_idx = df['time_diff'].idxmin()
-        
-            # KPI - 3 colonnes
-            col1, col2, col3 = st.columns(3)
-            col1.metric("🌡️ Température", f"{df['temperature'].iloc[closest_time_idx]} °C")
-            col2.metric("💨 Vent", f"{df['windspeed'].iloc[closest_time_idx]} m/s")
-            col3.metric("📅 Date", df['time'].iloc[closest_time_idx].strftime("%d/%m/%Y"))
-        
-            # Tableau horizontal des températures
-            st.subheader("🕒 Températures horaires")
-            today = pd.Timestamp.now().date()
-            daily_temps = df[df['time'].dt.date == today].copy()
-            
-            if not daily_temps.empty:
-                # Création d'un DataFrame horizontal
-                hourly_data = daily_temps.set_index('time')['temperature'].round(0).astype(int)
+                # Calculer la différence absolue entre chaque heure du DataFrame et l'heure actuelle
+                df['time_diff'] = abs(df['time'] - current_time)
+                
+                # Trouver l'index de l'entrée la plus proche de l'heure actuelle
+                closest_time_idx = df['time_diff'].idxmin()
+                
+                # KPI - 3 colonnes
+                col1, col2, col3 = st.columns(3)
+                col1.metric("🌡️ Température", f"{df.loc[closest_time_idx, 'temperature']} °C")
+                col2.metric("💨 Vent", f"{df.loc[closest_time_idx, 'windspeed']} m/s")
+                col3.metric("📅 Date", df.loc[closest_time_idx, 'time'].strftime("%d/%m/%Y"))
+                
+                # Tableau horizontal des températures
+                st.subheader("🕒 Températures horaires")
+                today = pd.Timestamp.now().date()
+                daily_temps = df[df['time'].dt.date == today].copy()
+                
+                if not daily_temps.empty:
+                    # Création d'un DataFrame horizontal
+                    hourly_data = daily_temps.set_index('time')['temperature'].round(0).astype(int)
                 hourly_data.index = hourly_data.index.strftime('%H:%M')
                 hourly_df = pd.DataFrame([hourly_data.values], columns=hourly_data.index)
                 

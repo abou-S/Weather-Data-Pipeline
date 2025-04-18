@@ -13,7 +13,8 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   airflow:
-    image: apache/airflow:2.7.1-python3.9
+    build:
+      context: ./airflow
     container_name: airflow
     restart: always
     depends_on:
@@ -35,7 +36,8 @@ services:
                airflow webserver & airflow scheduler"
   
   streamlit_dashboard:
-    build: .
+    build:
+      context: ./dashboard
     container_name: streamlit_dashboard
     ports:
       - "8502:8502"
@@ -43,8 +45,6 @@ services:
       - postgres
     environment:
       - DATABASE_URL=postgresql://airflow:airflow@postgres:5432/airflow
-
-
 
 volumes:
   postgres_data:

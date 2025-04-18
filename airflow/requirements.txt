@@ -1,0 +1,5 @@
+# Remove apache-airflow as it's already in the base image
+psycopg2-binary==2.9.10
+SQLAlchemy==2.0.40
+pandas==2.2.3
+requests==2.32.3
